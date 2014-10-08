@@ -1,0 +1,5 @@
+# Ignore Sass' cache
+/.sass-cache
+
+# Crazy macs
+/.DS_Store

@@ -1,0 +1,57 @@
+// Typography
+///////////////////////////////////////////////////////////////////////////////
+$sans-serif: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: Verdana, Georgia, Times, "Times New Roman", serif;
+
+$base-font-family: $sans-serif;
+$header-font-family: $base-font-family;
+
+
+// Sizes
+///////////////////////////////////////////////////////////////////////////////
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$base-border-radius: em(3);
+
+// $root-font-size-int: 20; // unsigned px
+// $root-font-size: $root-font-size-int * 1px;
+
+
+
+// Colors
+///////////////////////////////////////////////////////////////////////////////
+
+// colors
+$app-orange: #f7883e;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+
+// greyscales
+$light-grey: #ededed;
+$mushroom: #c9c9c9;
+$blue-grey: #a8b3ba;
+$medium-grey: #666;
+$dark-grey: #525251;
+$almost-black: #3f3f3f;
+
+// assignments
+
+// Body Color
+$base-body-color: white;
+
+//  Font Colors
+$base-font-color: $medium-grey;
+$base-accent-color: $app-orange;
+
+//  Text Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+
+// Border color
+$base-border-color: $light-grey;
+
+// Flash Colors
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
