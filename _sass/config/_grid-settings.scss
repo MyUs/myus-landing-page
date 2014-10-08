@@ -1,0 +1,32 @@
+@import "neat/neat-helpers";
+
+// $visual-grid: true;
+// $visual-grid-color: green;
+// $visual-grid-index: front;
+// $visual-grid-opacity: 0.15;
+
+$border-box-sizing: true;
+
+// Define pixels:
+$root-font-size-int: 18; // body font size. Different from html font size used for REMs
+$column-width-int: 63;
+$gutter-width-int: 40;
+$grid-padding-int: 10;
+$total-columns: 12;
+$total-width-int: ($total-columns * $column-width-int) + (($total-columns - 1) * $gutter-width-int) + (2 * $grid-padding-int);
+
+// Change the grid settings
+$root-font-size: $root-font-size-int * 1px;
+$grid-columns: $total-columns;
+$column: $column-width-int*1px;
+$gutter: $column-width-int*1px;
+$grid-padding: $grid-padding-int*1px;
+$max-width: em($total-width-int,$root-font-size-int);
+
+
+$led: new-breakpoint(min-width 300px $grid-columns);
+$flashlight: new-breakpoint(min-width 480px $grid-columns);
+$desklamp: new-breakpoint(min-width 600px $grid-columns);
+$chandelier: new-breakpoint(min-width 768px $grid-columns);
+$lighthouse: new-breakpoint(min-width 1020px $grid-columns);
+// $sun

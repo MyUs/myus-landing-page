@@ -1,0 +1,112 @@
+@mixin reset-container {
+  $real-max: ($column*$grid-columns)+($gutter*($grid-columns - 1))+($grid-padding * 2);
+  @include rem(max-width, $real-max);
+}
+
+
+@mixin default_transition($time: 333ms) {
+  @include transition($time);
+}
+
+@mixin sidelines {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.75em;
+  &:before,
+  &:after
+  {
+    position: absolute;
+    top: 60%;
+    width: 999em;
+    content: " ";
+    border-bottom: solid 1px $blue-grey;
+    margin: 0 0.5em;
+  }
+  &:before {
+    right: 100%;
+  }
+  &:after {
+    left: 100%;
+  }
+}
+
+@mixin buttn($foreground: $app-orange, $background: #fff){
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 2em;
+  background-clip: padding-box;
+  background-color: $background;
+  color: $foreground;
+  text-decoration: none;
+  text-shadow: none;
+  @include default_transition(0.111ms);
+  &:hover {
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1));
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.2) inset;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  }
+}
+
+// Add arrow as pseudo element
+@mixin pointy($size, $color, $direction) {
+  // position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    margin-left: 0-$size/2;
+    @include triangle($size, $color, $direction);
+  }
+}
+
+// Reset margin and clear on each of selection then set on specific
+@mixin griddy($cols) {
+  @if($cols > 1) {
+    > *{
+      @for $i from 1 through $cols {
+        &:nth-child(#{$i}n) {
+          margin-right: flex-gutter();
+          clear: none;
+        }
+      }
+      @include span-columns($grid-columns / $cols);
+      @include omega($cols*1n);
+    }
+  }
+  @else {
+    @include fill-parent();
+  }
+}
+
+
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: $root-font-size;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem * 1;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem;
+  }
+  @else {
+    // Create an empty list that we can dump values into
+    $rem-values: ();
+    @each $value in $px-values {
+      // If the value is zero or not a number, return it
+      @if $value == 0 or type-of( $value ) != "number" {
+        $rem-values: append($rem-values, $value);
+      }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem);
+      }
+    }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values;
+  }
+}
