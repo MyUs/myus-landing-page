@@ -61,6 +61,7 @@
   &:after {
     content: " ";
     position: absolute;
+    left: 50%;
     margin-left: 0-$size/2;
     @include triangle($size, $color, $direction);
   }

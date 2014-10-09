@@ -80,10 +80,13 @@ textarea {
 
 
 .intro {
-  background: rgba(211,222,240,1);
-  color: $app-dark-blue;
+  position: relative;
   text-align: center;
+  background: rgba(211,222,240,1);
+  @include pointy(38px,rgba(211,222,240,1),down);
+  color: $app-dark-blue;
 }
+
 
 .large-left {
   aside {
@@ -119,17 +122,58 @@ header {
   }
 }
 
+.how-it-works {
+  aside {
+    border: solid 1px $base-border-color;
+    @include rem(padding, 30px);
+  }
+  .copy {
+    @include omega;
+    > * {
+      // @include span-columns(4,5);
+      float: right;
+      width: 80%;
+    }
+    .ss-icon {
+      // @include span-columns(1,5);
+      float: left;
+      width: 20%;
+      @include rem(font-size, 60px);
+      line-height: 1.4;
+      color: $app-medium-blue;
+    }
+  }
+}
+
 .services {
+  // TODO: Make sections decrease in z-index so arrows overlap visibly
+  position: relative;
   text-align: center;
   background: $app-medium-blue;
+  @include pointy(38px,$app-medium-blue,down);
   li {
     @include span-columns(2,12);
   }
 }
 
 .plans {
+  position: relative;
+  background: $light-grey;
+  @include pointy(38px,$light-grey,down);
   li {
     @include span-columns(4,12);
+  }
+}
+
+.quote {
+
+}
+.stats {
+  li {
+    &:before {
+      color: $app-medium-blue;
+      margin-right: 0.5rem;
+    }
   }
 }
 

@@ -7,12 +7,7 @@ $app-medium-blue: rgba(77,126,196,1); // headings highlight / button background
 $app-dark-blue: rgba(32,50,102,1); // headings
 
 // greyscales
-$light-grey: #ededed;
-$mushroom: #c9c9c9;
-$blue-grey: #a8b3ba;
-$medium-grey: #666;
-$dark-grey: #525251;
-$almost-black: #3f3f3f;
+$light-grey: rgba(218,218,218,1);
 
 // assignments
 $base-font-color: #000;
@@ -21,7 +16,7 @@ $base-accent-color: $app-medium-blue;
 $base-link-color: $app-medium-blue;
 $hover-link-color: $app-dark-blue;
 
-$base-border-color: #000;
+$base-border-color: #f5f5f5;
 
 // Flash Colors
 $error-color: red;
