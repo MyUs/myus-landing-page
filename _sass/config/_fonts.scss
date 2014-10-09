@@ -1,5 +1,18 @@
-$sans: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Typography
+///////////////////////////////////////////////////////////////////////////////
+$sans-serif: "OpenSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: Verdana, Georgia, Times, "Times New Roman", serif;
+
+$base-font-family: $sans-serif;
+$header-font-family: $base-font-family;
+
+
+// Sizes
+///////////////////////////////////////////////////////////////////////////////
+$base-font-size-int: 20;
+$base-font-size: $base-font-size-int * 1px;
+$base-line-height: $base-font-size * 1.7;
+$base-border-radius: em(3);
 
 
 // Open Sans Normal

@@ -1,6 +1,6 @@
 // colors
-$app-orange: rgba(235,160,80,1);
-$app-dark-orange: rgba(158,108,54,1);
+// $app-orange: rgba(235,160,80,1);
+// $app-dark-orange: rgba(158,108,54,1);
 // $app-blue-10: rgba(211,222,240,1); // intro background
 $app-light-blue: rgba(162,197,238,1); // benefits icons
 $app-medium-blue: rgba(77,126,196,1); // headings highlight / button background
@@ -15,5 +15,16 @@ $dark-grey: #525251;
 $almost-black: #3f3f3f;
 
 // assignments
-$text-color: $medium-grey;
-$link-color: $app-orange;
+$base-font-color: #000;
+$base-accent-color: $app-medium-blue;
+
+$base-link-color: $app-medium-blue;
+$hover-link-color: $app-dark-blue;
+
+$base-border-color: #000;
+
+// Flash Colors
+$error-color: red;
+$notice-color: yellow;
+$success-color: green;
+

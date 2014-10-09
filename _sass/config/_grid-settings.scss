@@ -5,7 +5,6 @@ $default-feature: min-width; // Default @media feature for the breakpoint() mixi
 $default-layout-direction: LTR !default;
 
 // Define pixels:
-$root-font-size-int: 20;
 $column-width-int: 63;
 $gutter-width-int: 40;
 $grid-padding-int: 10;
@@ -13,13 +12,11 @@ $total-columns: 12;
 $total-width-int: ($total-columns * $column-width-int) + (($total-columns - 1) * $gutter-width-int) + (2 * $grid-padding-int);
 
 // Change the grid settings
-$root-font-size: $root-font-size-int * 1px;
 $grid-columns: $total-columns;
 $column: $column-width-int*1px;
 $gutter: $column-width-int*1px;
 $grid-padding: $grid-padding-int*1px;
-// $max-width: em($total-width-int,$root-font-size-int);
-$max-width: ($total-width-int / $root-font-size-int) * 1rem;
+$max-width: ($total-width-int / $base-font-size-int) * 1rem;
 
 
 $led: new-breakpoint(min-width 300px $grid-columns);
