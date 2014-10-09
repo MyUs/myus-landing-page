@@ -8,7 +8,7 @@
 $border-box-sizing: true;
 
 // Define pixels:
-$root-font-size-int: 18; // body font size. Different from html font size used for REMs
+$root-font-size-int: 20;
 $column-width-int: 63;
 $gutter-width-int: 40;
 $grid-padding-int: 10;
@@ -21,7 +21,8 @@ $grid-columns: $total-columns;
 $column: $column-width-int*1px;
 $gutter: $column-width-int*1px;
 $grid-padding: $grid-padding-int*1px;
-$max-width: em($total-width-int,$root-font-size-int);
+// $max-width: em($total-width-int,$root-font-size-int);
+$max-width: ($total-width-int / $root-font-size-int) * 1rem;
 
 
 $led: new-breakpoint(min-width 300px $grid-columns);
