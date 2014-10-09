@@ -3,7 +3,7 @@ button,
 input,
 select,
 textarea {
-  color: #222;
+  color: #000;
 }
 
 ::-moz-selection {
@@ -43,21 +43,31 @@ textarea {
 }
 
 
-h1 {
-  @include rem(font-size, 60px);
-  line-height: 1.4;
+.container {
+  > * {
+    font-size: 90%; // Adjust relative to $root-font-size on <html>
+    line-height: 1.7;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: $app-dark-blue;
+    line-height: 1.4;
+    strong {
+      color: $app-medium-blue;
+    }
+  }
+  h1 {
+    @include rem(font-size, 60px);
+  }
+  h2 {
+    @include rem(font-size, 42px);
+  }
+
+  .button {
+    @include button;
+  }
 }
-
-.button {
-  @include button;
-}
-
-
-
-
-
-
-
 
 
 .browsehappy {
@@ -71,4 +81,81 @@ h1 {
 
 .intro {
   background: rgba(211,222,240,1);
+  color: $app-dark-blue;
+  text-align: center;
+}
+
+.large-left {
+  aside {
+    @include span-columns(7,12);
+  }
+  .copy {
+    @include span-columns(5,12);
+  }
+}
+
+.fifty-fifty {
+  .container {
+    > div {
+      @include span-columns(6,12);
+      h1, h2 {
+        text-align: left;
+      }
+    }
+  }
+}
+
+header {
+  .container {
+    > * {
+      float: right;
+      &.logo {
+        float: left;
+      }
+    }
+    #menu-trigger {
+      display: none;
+    }
+  }
+}
+
+.services {
+  text-align: center;
+  background: $app-medium-blue;
+  li {
+    @include span-columns(2,12);
+  }
+}
+
+.plans {
+  li {
+    @include span-columns(4,12);
+  }
+}
+
+.brands {
+  text-align: center;
+}
+
+.final-cta {
+  text-align: center;
+  background: $app-medium-blue;
+}
+
+footer {
+  background: $app-dark-blue;
+  a {
+    color: #fff;
+  }
+}
+
+.services,
+.final-cta,
+footer
+{
+  .container {
+    > * {
+      color: #fff;
+    }
+  }
 }

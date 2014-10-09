@@ -4,7 +4,7 @@ html {
 }
 body {
   height: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 // .page-wrapper {
@@ -34,9 +34,6 @@ header {
   //@include reset-container;
   overflow: hidden;
   padding: 0 0.625em;
-  > * {
-    font-size: 90%; // Adjust relative to $root-font-size on <html>
-  }
 }
 
 .foo {

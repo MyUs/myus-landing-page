@@ -1,11 +1,8 @@
 @import "neat/neat-helpers";
 
-// $visual-grid: true;
-// $visual-grid-color: green;
-// $visual-grid-index: front;
-// $visual-grid-opacity: 0.15;
-
-$border-box-sizing: true;
+$border-box-sizing: true !default; // Makes all elements have a border-box layout
+$default-feature: min-width; // Default @media feature for the breakpoint() mixin
+$default-layout-direction: LTR !default;
 
 // Define pixels:
 $root-font-size-int: 20;
