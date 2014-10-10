@@ -1093,6 +1093,11 @@ section {
 
 .brands {
   text-align: center; }
+  .brands img {
+    max-height: 44px;
+    max-height: 2.2rem;
+    margin: 0 30px 76px;
+    margin: 0 1.5rem 3.8rem; }
 
 .final-cta {
   text-align: center;

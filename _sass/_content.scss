@@ -454,6 +454,10 @@ section {
 
 .brands {
   text-align: center;
+  img {
+    @include rem(max-height, 44px);
+    @include rem(margin, 0 30px 76px);
+  }
 }
 
 .final-cta {
