@@ -52,8 +52,10 @@ textarea {
   h1, h2, h3 {
     color: $app-dark-blue;
     line-height: 1.4;
+    font-weight: 600;
     strong {
       color: $app-medium-blue;
+      font-weight: 600;
     }
   }
   h1, h2 {
@@ -78,7 +80,8 @@ textarea {
     border-top: solid transparent;
     border-width: 0 0 2px;
     font-size: 111%;
-    font-weight: bold;
+    font-weight: 700;
+    text-shadow: none;
     &.dark {
       background: none $app-medium-blue;
       border-bottom: solid $app-dark-blue;
@@ -204,6 +207,12 @@ section {
   @include rem(padding, 60px 0);
 }
 
+.with-divider {
+  .container {
+    background: transparent url(../img/vertical-divider.png) center repeat-y;
+  }
+}
+
 .how-it-works {
   aside {
     @include rem(padding, 30px);
@@ -255,7 +264,7 @@ section {
     @include span-columns(2,12);
     font-size: 110%;
     line-height: 1.4;
-    font-weight: bold;
+    font-weight: 600;
     &:before {
       display: block;
       margin-bottom: 0.4em;
@@ -377,11 +386,64 @@ section {
 }
 
 
+.quote,
+.stats
+{
+  h2 {
+    text-align: left;
+  }
+}
 .quote {
-
+  @include span-columns(6,12);
+  h2 {
+    margin-bottom: 1.5em;
+  }
+  hr {
+    margin-left: 0;
+    margin-right: 0;
+    border: solid $medium-grey;
+    border-width: 1px 0;
+    height: 9px;
+  }
+  img.quoted {
+    float: left;
+    width: 28%;
+    margin-top: 2em;
+  }
+  blockquote {
+    float: right;
+    width: 68%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    p {
+      font-size: 167%;
+      line-height: 1.27;
+      font-style: italic;
+    }
+  }
+  cite {
+    display: block;
+    margin-top: 0.8em;
+    padding-top: 0.8em;
+    border-top: solid 1px $medium-grey;
+    font-style: normal;
+    &:before {
+      display: none;
+    }
+  }
+  .rating {
+    font-weight: 700;
+    .stars {
+      font-weight: normal;
+      color: $app-medium-blue;
+    }
+  }
 }
 
 .stats {
+  @include span-columns(5,12);
+  @include shift(1);
   li {
     &:before {
       color: $app-medium-blue;
