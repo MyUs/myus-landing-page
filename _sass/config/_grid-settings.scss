@@ -14,7 +14,7 @@ $total-width-int: ($total-columns * $column-width-int) + (($total-columns - 1) *
 // Change the grid settings
 $grid-columns: $total-columns;
 $column: $column-width-int*1px;
-$gutter: $column-width-int*1px;
+$gutter: $gutter-width-int*1px;
 $grid-padding: $grid-padding-int*1px;
 $max-width: ($total-width-int / $base-font-size-int) * 1rem;
 
