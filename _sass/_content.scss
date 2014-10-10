@@ -203,7 +203,9 @@ header {
 }
 
 
-section {
+section,
+footer
+{
   @include rem(padding, 60px 0);
 }
 
@@ -467,6 +469,25 @@ section {
 
 footer {
   background: $app-dark-blue;
+  .container {
+    p {
+      font-size: 78%;
+      line-height: 1.4;
+    }
+  }
+  img {
+    display: block;
+    &.logo-myus {
+      margin-bottom: 1.2em;
+    }
+    &.award {
+      float: left;
+      margin-left: 2em;
+    }
+  }
+  p {
+    float: left;
+  }
   a {
     color: #fff;
   }

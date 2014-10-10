@@ -866,7 +866,8 @@ header .container {
     display: inline-block;
     padding: 0 1em; }
 
-section {
+section,
+footer {
   padding: 60px 0;
   padding: 3rem 0; }
 
@@ -1105,6 +1106,18 @@ section {
 
 footer {
   background: #203266; }
+  footer .container p {
+    font-size: 78%;
+    line-height: 1.4; }
+  footer img {
+    display: block; }
+    footer img.logo-myus {
+      margin-bottom: 1.2em; }
+    footer img.award {
+      float: left;
+      margin-left: 2em; }
+  footer p {
+    float: left; }
   footer a {
     color: #fff; }
 
