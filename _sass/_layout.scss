@@ -30,9 +30,9 @@ header {
 
 .container {
   @include outer-container;
-  //@include reset-container;
+  box-sizing: content-box;
   overflow: hidden;
-  padding: 0 0.625em;
+  padding: 0 $grid-padding;
 }
 
 .foo {

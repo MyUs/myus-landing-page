@@ -1,3 +1,5 @@
 $(function() {
-  // do stuff
+
+  $('#sidenav').onePageNav();
+
 });

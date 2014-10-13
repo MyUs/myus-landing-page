@@ -24,6 +24,9 @@ hr {
   border-top: 1px dashed $app-medium-blue;
   margin: 1.5em $column 3.5em;
   padding: 0;
+  @include media($bp-acorn) {
+    margin: 1.5em 0 2.5em;
+  }
 }
 
 audio,
@@ -48,8 +51,9 @@ body {
 }
 .liner {
   font-size: 90%; // Adjust relative to $root-font-size on <html>
-  @include media($bp-sapling) {
-    font-size: 75%;
+  @include media($bp-acorn) {
+    font-size: 70%;
+    line-height: 2.2;
   }
 }
 
@@ -66,20 +70,21 @@ h1, h2 {
   text-align: center;
 }
 h1 {
-  // @include rem(font-size, 60px);
-  // @include rem(margin-bottom, 8px);
   font-size: 3.333em;
   margin-bottom: 0.444em;
+  @include media($bp-acorn) {
+    font-size: 2.14em;
+  }
 }
 h2 {
-  // @include rem(font-size, 42px);
-  // @include rem(margin-bottom, 24px);
   font-size: 2.278em;
   margin-bottom: 1.333em;
+  @include media($bp-acorn) {
+    font-size: 143%;
+    margin-bottom: 1em;
+  }
 }
 h3 {
-  // @include rem(font-size, 22px);
-  // @include rem(margin-bottom, 24px);
   font-size: 1.222em;
 
 }
@@ -92,6 +97,10 @@ h3 {
   font-size: 111%;
   font-weight: 700;
   text-shadow: none;
+  @include media($bp-acorn) {
+    width: 95%;
+    text-align: center;
+  }
   &.dark {
     background: none $app-medium-blue;
     border-bottom: solid $app-dark-blue;
@@ -103,7 +112,7 @@ h3 {
   &.light {
     color: $app-medium-blue;
     background: none #fff;
-    border-bottom: solid $app-dark-blue;
+    border-bottom: solid rgba(95,95,95,1);
     &:hover:not(:disabled) {
       color: #fff;
       background: none $app-dark-blue;
@@ -149,6 +158,9 @@ h3 {
 
 
 #sidenav {
+  @include media($bp-acorn) {
+    display: none;
+  }
   position: fixed;
   right: 0;
   top: 50%;
@@ -177,6 +189,12 @@ h3 {
         font-size: 1.11em;
       }
     }
+    &.current {
+      a {
+        color: #fff;
+        cursor: default;
+      }
+    }
   }
   span {
     display: none;
@@ -199,11 +217,16 @@ h3 {
   h2 {
     // @include rem(font-size, 33px);
     font-size: 1.833em;
+    @include media($bp-acorn) {
+      font-size: 1.43em;
+    }
   }
   p {
     font-size: 120%;
-    // @include rem(margin-bottom, 60px);
     margin-bottom: 3em;
+    @include media($bp-acorn) {
+      margin-bottom: 1.5em;
+    }
   }
   img {
     // @include rem(margin-bottom, 32px);
@@ -211,7 +234,7 @@ h3 {
   }
   .button {
     width: 100%;
-    font-size: 167%;
+    font-size: 129%;
     line-height: 275%;
   }
 }
@@ -220,18 +243,31 @@ h3 {
 .large-left {
   aside {
     @include span-columns(7,12);
+    @include media($bp-acorn) {
+      @include span-columns($total-columns);
+      margin-bottom: 0.75em;
+    }
   }
   .copy {
     @include span-columns(5,12);
+    @include media($bp-acorn) {
+      @include span-columns($total-columns);
+    }
   }
 }
 
 .fifty-fifty {
-  .container {
+  .liner {
     > div {
       @include span-columns(6,12);
       h1, h2 {
         text-align: left;
+      }
+      @include media($bp-acorn) {
+        @include span-columns($total-columns);
+        h1, h2 {
+          text-align: center;
+        }
       }
     }
   }
@@ -239,24 +275,23 @@ h3 {
 
 header {
   .container {
-    @include rem(padding, 30px 0);
+    @include rem(padding-top, 30px);
+    @include rem(padding-bottom, 30px);
     @include rem(line-height, 60px);
     color: $app-medium-blue;
-    > * {
-      float: right;
-      &.logo {
-        float: left;
-        @include rem(max-height, 60px);
-      }
-    }
+  }
+  .logo {
+    float: left;
+    @include rem(max-height, 60px);
+  }
+  nav {
+    float: right;
     #menu-trigger {
       display: none;
     }
-    nav {
-      a {
-        display: inline-block;
-        padding: 0 1em;
-      }
+    a {
+      display: inline-block;
+      padding: 0 1em;
     }
   }
 }
@@ -266,11 +301,17 @@ section,
 footer
 {
   @include rem(padding, 60px 0);
+  @include media($bp-acorn) {
+    @include rem(padding, 30px 0);
+  }
 }
 
 .with-divider {
   .container {
     background: transparent url(../img/vertical-divider.png) center repeat-y;
+    @include media($bp-acorn) {
+      background-image: none;
+    }
   }
 }
 
@@ -279,9 +320,15 @@ footer
     @include rem(padding, 30px);
     border: solid 1px $base-border-color;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.18);
+    @include media($bp-acorn) {
+      margin-bottom: 2em;
+    }
   }
   .copy {
     @include omega;
+    @include media($bp-acorn) {
+      margin-bottom: 1em;
+    }
 
     background: linear-gradient(
       to right,
@@ -294,19 +341,28 @@ footer
     h3 {
       padding-left: 20%;
       background: #fff;
+      @include media($bp-acorn) {
+        padding-left: 0;
+      }
     }
     p {
-      // @include span-columns(4,5);
       float: right;
       width: 80%;
+      @include media($bp-acorn) {
+        @include span-columns($total-columns);
+      }
     }
     .ss-icon {
-      // @include span-columns(1,5);
       float: left;
       width: 20%;
-      @include rem(font-size, 60px);
+      font-size: 3.33em;
       line-height: 1.4;
       color: $app-medium-blue;
+      margin-top: 0.5em;
+      @include media($bp-acorn) {
+        @include span-columns($total-columns);
+        margin-top: 0;
+      }
     }
   }
 }
@@ -317,9 +373,15 @@ footer
   text-align: center;
   background: $app-medium-blue;
   @include pointy(38px,$app-medium-blue,down);
+  h2 {
+    color: #fff;
+  }
   ul {
     @include outer-container();
     padding: 2.75em 0;
+    @include media($bp-acorn) {
+      padding-bottom: 0;
+    }
   }
   li {
     @include span-columns(2,12);
@@ -329,10 +391,31 @@ footer
     &:before {
       display: block;
       margin-bottom: 0.4em;
-      @include rem(font-size, 75px);
+      font-size: 417%;
       line-height: 1;
       font-weight: normal;
       color: $app-light-blue;
+    }
+    @include media($bp-sapling) {
+      @include span-columns(4,12);
+      &:nth-child(3n+3) {
+        @include omega;
+      }
+      &:before {
+        margin-bottom: 0.2em;
+      }
+      margin-bottom: 3em;
+    }
+    @include media($bp-acorn) {
+      font-size: 114%;
+      @include span-columns(6,12);
+      margin-bottom: 4em;
+      &:nth-child(even) {
+        @include omega;
+      }
+      &:before {
+        margin-bottom: 0.2em;
+      }
     }
   }
 }
@@ -347,6 +430,12 @@ footer
     text-align: center;
     position: relative;
     z-index: 2;
+    @include media($bp-acorn) {
+      @include span-columns($total-columns);
+      padding-top: 0;
+      margin-bottom: 1.43em;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
     a {
       display: block;
       position: relative;
@@ -356,10 +445,15 @@ footer
       padding-top: 2.2em;
       padding-bottom: 1em;
       color: $base-font-color;
+      @include media($bp-acorn) {
+        border: solid 1px #fff;
+        padding-top: 3em;
+      }
       .button {
         font-style: normal;
         padding-left: 2em;
         padding-right: 2em;
+        width: 90%;
       }
       &:hover {
         .button {
@@ -373,12 +467,18 @@ footer
         }
         .membership-type {
           background: $app-dark-blue;
+          @include media($bp-acorn) {
+            background: $app-light-blue;
+          }
         }
       }
     }
     &:first-child {
       a {
         border-width: 3px 0 3px 3px;
+        @include media($bp-acorn) {
+          border-width: 1px;
+        }
       }
       strong {
         background-color: transparent;
@@ -392,7 +492,7 @@ footer
       background: $app-light-blue;
       color: #fff;
       text-transform: uppercase;
-      font-size: 72%;
+      font-size: 100%;
       line-height: 2.15;
     }
     h3 {
@@ -408,6 +508,12 @@ footer
       background-color: rgba(151,151,151,1);
       color: #fff;
       font-weight: normal;
+      @include media($bp-acorn) {
+        line-height: 2.5;
+        &.empty {
+          display: none;
+        }
+      }
     }
     .button {
       font-size: 100%;
@@ -418,25 +524,43 @@ footer
       width: 50%;
       padding-top: 0;
       z-index: 1;
+      @include media($bp-acorn) {
+        @include span-columns($total-columns);
+      }
       a {
         padding-top: 4.4em;
         background: $app-medium-blue;
         border: solid 1px #fff;
         color: #fff;
+        @include media($bp-acorn) {
+          padding-top: 4em;
+        }
       }
       .membership-type {
         font-size: 111%;
         line-height: 1.95;
+        @include media($bp-acorn) {
+          font-size: 70%;
+        }
       }
       h3 {
         font-size: 133%;
+        @include media($bp-acorn) {
+          font-size: 143%;
+        }
       }
       p {
         margin-bottom: 1em;
+        @include media($bp-acorn) {
+          font-size: 143%;
+        }
       }
       strong {    
         margin-top: 1.3em;
         background-color: rgba(79,170,109,1);
+        @include media($bp-acorn) {
+          font-size: 70%;
+        }
       }
       .button {
         font-size: 133%;
@@ -452,10 +576,19 @@ footer
 {
   h2 {
     text-align: left;
+    @include media($bp-acorn) {
+      text-align: center;
+    }
   }
 }
 .quote {
   @include span-columns(6,12);
+  @include media($bp-acorn) {
+    @include span-columns($total-columns);
+    padding-bottom: 1em;
+    margin-bottom: 3em;
+    border-bottom: solid 1px $medium-grey;
+  }
   h2 {
     margin-bottom: 1.5em;
   }
@@ -470,6 +603,12 @@ footer
     float: left;
     width: 28%;
     margin-top: 2em;
+    @include media($bp-acorn) {
+      display: block;
+      width: auto;
+      float: none;
+      margin: 0 auto 2em;
+    }
   }
   blockquote {
     float: right;
@@ -477,10 +616,18 @@ footer
     margin: 0;
     border: 0;
     padding: 0;
+    @include media($bp-acorn) {
+      width: auto;
+      float: none;
+    }
     p {
       font-size: 167%;
       line-height: 1.27;
       font-style: italic;
+      @include media($bp-acorn) {
+        font-size: 143%;
+        line-height: 1.8;
+      }
     }
   }
   cite {
@@ -492,9 +639,15 @@ footer
     &:before {
       display: none;
     }
+    @include media($bp-acorn) {
+      line-height: 243%;
+    }
   }
   .rating {
     font-weight: 700;
+    @include media($bp-acorn) {
+      line-height: 200%;
+    }
     .stars {
       font-weight: normal;
       color: $app-medium-blue;
@@ -505,10 +658,27 @@ footer
 .stats {
   @include span-columns(5,12);
   @include shift(1);
+  @include media($bp-acorn) {
+    @include span-columns($total-columns);
+    @include shift(0);
+  }
   li {
     &:before {
       color: $app-medium-blue;
-      margin-right: 0.5rem;
+      margin-right: 0.75em;
+      vertical-align: middle;
+    }
+  }
+  @include media($bp-acorn) {
+    p {
+      font-size: 114%;
+    }
+    li {
+      font-size: 121%;
+      &:before {
+        font-size: 118%;
+        margin-right: 1.5em;
+      }
     }
   }
 }
@@ -535,7 +705,13 @@ footer {
     p {
       font-size: 78%;
       line-height: 1.4;
+      @include media($bp-acorn) {
+        font-size: 100%;
+      }
     }
+  }
+  .contact-info {
+    position: relative;    
   }
   img {
     display: block;
@@ -545,6 +721,12 @@ footer {
     &.award {
       float: left;
       margin-left: 2em;
+      @include media($bp-acorn) {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0;
+      }
     }
   }
   p {
@@ -552,6 +734,11 @@ footer {
   }
   a {
     color: #fff;
+    &:hover {
+      color: #fff;
+      background: $app-light-blue;
+      // text-decoration: underline;
+    }
   }
 }
 
