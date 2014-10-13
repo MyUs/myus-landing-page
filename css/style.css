@@ -622,6 +622,9 @@ body {
   height: 100%;
   text-align: left; }
 
+.page-wrapper {
+  position: relative; }
+
 header a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -687,8 +690,14 @@ fieldset {
 textarea {
   resize: vertical; }
 
+body {
+  line-height: 1.7; }
+
 .container > * {
   font-size: 90%; }
+  @media screen and (max-width: 750px) {
+    .container > * {
+      font-size: 75%; } }
 .container h1, .container h2, .container h3 {
   color: #203266;
   line-height: 1.4;
@@ -699,18 +708,13 @@ textarea {
 .container h1, .container h2 {
   text-align: center; }
 .container h1 {
-  font-size: 60px;
-  font-size: 3rem;
-  margin-bottom: 8px;
-  margin-bottom: 0.4rem; }
+  font-size: 3.333em;
+  margin-bottom: 0.444em; }
 .container h2 {
-  font-size: 42px;
-  font-size: 2.1rem;
-  margin-bottom: 24px;
-  margin-bottom: 1.2rem; }
+  font-size: 2.278em;
+  margin-bottom: 1.333em; }
 .container h3 {
-  font-size: 22px;
-  font-size: 1.1rem; }
+  font-size: 1.222em; }
 .container .button {
   border: 1px solid #076fe4;
   border-radius: 3px;
@@ -788,6 +792,35 @@ textarea {
   max-width: 26rem;
   margin: auto; }
 
+#sidenav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 999;
+  background: #4d7ec4;
+  padding: 0.5em;
+  border: solid 1px #fff;
+  border-right: none; }
+  #sidenav li a {
+    display: block;
+    color: #203266; }
+    #sidenav li a:hover {
+      color: #fff; }
+    #sidenav li a:not([class]):before {
+      font-family: "SSSymbolicons";
+      content: "\1F311";
+      vertical-align: middle;
+      font-size: 0.75em;
+      padding-left: 0.175em; }
+    #sidenav li a.home:before {
+      font-size: 1.11em; }
+  #sidenav span {
+    display: none;
+    margin-left: 0.5em; }
+  #sidenav:hover span {
+    display: inline-block; }
+
 .intro {
   position: relative;
   text-align: center;
@@ -805,15 +838,12 @@ textarea {
     border-width: 19px;
     border-top-color: #d3def0; }
   .intro h2 {
-    font-size: 33px;
-    font-size: 1.65rem; }
+    font-size: 1.833em; }
   .intro p {
     font-size: 120%;
-    margin-bottom: 60px;
-    margin-bottom: 3rem; }
+    margin-bottom: 3em; }
   .intro img {
-    margin-bottom: 32px;
-    margin-bottom: 1.6rem; }
+    margin-bottom: 1.778em; }
   .intro .button {
     width: 100%;
     font-size: 167%;

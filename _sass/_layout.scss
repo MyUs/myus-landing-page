@@ -7,10 +7,9 @@ body {
   text-align: left;
 }
 
-// .page-wrapper {
-//   // This exists to give the page a white background and allow footer to travel to bottom of browser window even on short pages.
-//   background: #fff image-url("bg_tile_static.png") center repeat;
-// }
+.page-wrapper {
+  position: relative;
+}
 
 
 // ======================================
@@ -48,4 +47,9 @@ header {
 
 footer {
 }
+
+
+
+
+
 

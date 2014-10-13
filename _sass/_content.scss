@@ -43,10 +43,15 @@ textarea {
   resize: vertical;
 }
 
-
+body {
+  line-height: 1.7;
+}
 .container {
   > * {
     font-size: 90%; // Adjust relative to $root-font-size on <html>
+    @include media($bp-sapling) {
+      font-size: 75%;
+    }
   }
 
   h1, h2, h3 {
@@ -62,16 +67,22 @@ textarea {
     text-align: center;
   }
   h1 {
-    @include rem(font-size, 60px);
-    @include rem(margin-bottom, 8px);
+    // @include rem(font-size, 60px);
+    // @include rem(margin-bottom, 8px);
+    font-size: 3.333em;
+    margin-bottom: 0.444em;
   }
   h2 {
-    @include rem(font-size, 42px);
-    @include rem(margin-bottom, 24px);
+    // @include rem(font-size, 42px);
+    // @include rem(margin-bottom, 24px);
+    font-size: 2.278em;
+    margin-bottom: 1.333em;
   }
   h3 {
-    @include rem(font-size, 22px);
+    // @include rem(font-size, 22px);
     // @include rem(margin-bottom, 24px);
+    font-size: 1.222em;
+
   }
 
   .button {
@@ -136,6 +147,49 @@ textarea {
 }
 
 
+
+#sidenav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 999;
+  background: $app-medium-blue;
+  padding: 0.5em;
+  border: solid 1px #fff;
+  border-right: none;
+  li {
+    // list-style: disc;
+    a {
+      display: block;
+      color: $app-dark-blue;
+      &:hover {
+        color: #fff;
+      }
+      &:not([class]):before {
+        font-family: "SSSymbolicons";
+        content: "\1F311";
+        vertical-align: middle;
+        font-size: 0.75em;
+        padding-left: 0.175em;
+      }
+      &.home:before {
+        font-size: 1.11em;
+      }
+    }
+  }
+  span {
+    display: none;
+    margin-left: 0.5em;
+  }
+  &:hover {
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+
 .intro {
   position: relative;
   text-align: center;
@@ -143,14 +197,17 @@ textarea {
   @include pointy(38px,rgba(211,222,240,1),down);
   color: $app-dark-blue;
   h2 {
-    @include rem(font-size, 33px);
+    // @include rem(font-size, 33px);
+    font-size: 1.833em;
   }
   p {
     font-size: 120%;
-    @include rem(margin-bottom, 60px);
+    // @include rem(margin-bottom, 60px);
+    margin-bottom: 3em;
   }
   img {
-    @include rem(margin-bottom, 32px);
+    // @include rem(margin-bottom, 32px);
+    margin-bottom: 1.778em;
   }
   .button {
     width: 100%;

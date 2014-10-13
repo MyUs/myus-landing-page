@@ -19,9 +19,18 @@ $grid-padding: $grid-padding-int*1px;
 $max-width: ($total-width-int / $base-font-size-int) * 1rem;
 
 
-$led: new-breakpoint(min-width 300px $grid-columns);
-$flashlight: new-breakpoint(min-width 480px $grid-columns);
-$desklamp: new-breakpoint(min-width 600px $grid-columns);
-$chandelier: new-breakpoint(min-width 768px $grid-columns);
-$lighthouse: new-breakpoint(min-width 1020px $grid-columns);
+// $led: new-breakpoint(min-width 300px $grid-columns);
+// $flashlight: new-breakpoint(min-width 480px $grid-columns);
+// $desklamp: new-breakpoint(min-width 600px $grid-columns);
+// $chandelier: new-breakpoint(min-width 768px $grid-columns);
+// $lighthouse: new-breakpoint(min-width 1020px $grid-columns);
 // $sun
+
+// $bp-acorn
+// $bp-shoot
+$bp-sapling: new-breakpoint(max-width 750px $grid-columns);
+// $bp-oak
+// $bp-forest
+
+
+
