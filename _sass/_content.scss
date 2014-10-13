@@ -46,74 +46,74 @@ textarea {
 body {
   line-height: 1.7;
 }
-.container {
-  > * {
-    font-size: 90%; // Adjust relative to $root-font-size on <html>
-    @include media($bp-sapling) {
-      font-size: 75%;
-    }
-  }
-
-  h1, h2, h3 {
-    color: $app-dark-blue;
-    line-height: 1.4;
-    font-weight: 600;
-    strong {
-      color: $app-medium-blue;
-      font-weight: 600;
-    }
-  }
-  h1, h2 {
-    text-align: center;
-  }
-  h1 {
-    // @include rem(font-size, 60px);
-    // @include rem(margin-bottom, 8px);
-    font-size: 3.333em;
-    margin-bottom: 0.444em;
-  }
-  h2 {
-    // @include rem(font-size, 42px);
-    // @include rem(margin-bottom, 24px);
-    font-size: 2.278em;
-    margin-bottom: 1.333em;
-  }
-  h3 {
-    // @include rem(font-size, 22px);
-    // @include rem(margin-bottom, 24px);
-    font-size: 1.222em;
-
-  }
-
-  .button {
-    @include button;
-    box-shadow: none;
-    border-top: solid transparent;
-    border-width: 0 0 2px;
-    font-size: 111%;
-    font-weight: 700;
-    text-shadow: none;
-    &.dark {
-      background: none $app-medium-blue;
-      border-bottom: solid $app-dark-blue;
-      &:hover:not(:disabled) {
-        background: none $app-dark-blue;
-      }
-    }
-    &.light {
-      color: $app-medium-blue;
-      background: none #fff;
-      border-bottom: solid $app-dark-blue;
-      &:hover:not(:disabled) {
-        color: #fff;
-        background: none $app-dark-blue;
-      }
-    }
-    &:hover:not(:disabled) {
-      box-shadow: none;
-    }
+.liner {
+  font-size: 90%; // Adjust relative to $root-font-size on <html>
+  @include media($bp-sapling) {
+    font-size: 75%;
   }
 }
+
+h1, h2, h3 {
+  color: $app-dark-blue;
+  line-height: 1.4;
+  font-weight: 600;
+  strong {
+    color: $app-medium-blue;
+    font-weight: 600;
+  }
+}
+h1, h2 {
+  text-align: center;
+}
+h1 {
+  // @include rem(font-size, 60px);
+  // @include rem(margin-bottom, 8px);
+  font-size: 3.333em;
+  margin-bottom: 0.444em;
+}
+h2 {
+  // @include rem(font-size, 42px);
+  // @include rem(margin-bottom, 24px);
+  font-size: 2.278em;
+  margin-bottom: 1.333em;
+}
+h3 {
+  // @include rem(font-size, 22px);
+  // @include rem(margin-bottom, 24px);
+  font-size: 1.222em;
+
+}
+
+.button {
+  @include button;
+  box-shadow: none;
+  border-top: solid transparent;
+  border-width: 0 0 2px;
+  font-size: 111%;
+  font-weight: 700;
+  text-shadow: none;
+  &.dark {
+    background: none $app-medium-blue;
+    border-bottom: solid $app-dark-blue;
+    &:hover:not(:disabled) {
+      color: #fff;
+      background: none $app-dark-blue;
+    }
+  }
+  &.light {
+    color: $app-medium-blue;
+    background: none #fff;
+    border-bottom: solid $app-dark-blue;
+    &:hover:not(:disabled) {
+      color: #fff;
+      background: none $app-dark-blue;
+    }
+  }
+  &:hover:not(:disabled) {
+    box-shadow: none;
+  }
+}
+
 
 /* 2D TRANSITIONS */
 /* Grow */
