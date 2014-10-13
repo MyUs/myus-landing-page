@@ -784,13 +784,9 @@ textarea {
   padding: 0.2em 0; }
 
 .narrow {
-  display: block;
-  float: left;
-  margin-right: 3.34448%;
-  width: 48.32776%;
-  margin-left: 25.83612%; }
-  .narrow:last-child {
-    margin-right: 0; }
+  max-width: 520px;
+  max-width: 26rem;
+  margin: auto; }
 
 .intro {
   position: relative;
