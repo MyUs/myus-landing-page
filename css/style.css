@@ -937,21 +937,36 @@ h3 {
         text-align: center; } }
 
 header .container {
-  padding-top: 30px;
-  padding-top: 1.5rem;
-  padding-bottom: 30px;
-  padding-bottom: 1.5rem;
-  line-height: 60px;
-  line-height: 3rem;
+  padding-top: 1.67em;
+  padding-bottom: 1.67em;
+  line-height: 3.33em;
   color: #4d7ec4; }
+  @media screen and (max-width: 850px) {
+    header .container {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em; } }
 header .logo {
-  float: left;
-  max-height: 60px;
-  max-height: 3rem; }
+  float: left; }
+  header .logo img {
+    max-height: 3.75em; }
+    @media screen and (max-width: 850px) {
+      header .logo img {
+        max-height: 2.5em; } }
 header #menu-trigger {
   float: right;
   clear: right;
-  display: none; }
+  display: none;
+  font-size: 114%;
+  line-height: 2.1875;
+  text-transform: uppercase;
+  color: #203266;
+  cursor: pointer; }
+  header #menu-trigger:hover {
+    color: #4d7ec4; }
+  header #menu-trigger:after {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.25em; }
   @media screen and (max-width: 850px) {
     header #menu-trigger {
       display: block; } }
@@ -959,14 +974,32 @@ header nav {
   float: right;
   overflow: hidden;
   max-height: 999px; }
+  header nav a {
+    float: left; }
+    header nav a + a:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: "";
+      width: 1px;
+      height: 1.2em;
+      margin: 0 1em;
+      background: #4d7ec4; }
   @media screen and (max-width: 850px) {
     header nav {
+      width: 100%;
+      clear: both;
+      background: #fff;
       max-height: 0; }
       header nav.open {
-        max-height: 999px; } }
-  header nav a {
-    display: inline-block;
-    padding: 0 1em; }
+        max-height: 999px; }
+      header nav a {
+        float: none;
+        display: block;
+        line-height: 2; }
+        header nav a + a {
+          border-top: solid 1px #dadada; }
+          header nav a + a:before {
+            display: none; } }
 
 section,
 footer {

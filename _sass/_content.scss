@@ -275,19 +275,41 @@ h3 {
 
 header {
   .container {
-    @include rem(padding-top, 30px);
-    @include rem(padding-bottom, 30px);
-    @include rem(line-height, 60px);
+    padding-top: 1.67em;
+    padding-bottom: 1.67em;
+    line-height: 3.33em;
     color: $app-medium-blue;
+    @include media($bp-oak) {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
   }
   .logo {
     float: left;
-    @include rem(max-height, 60px);
+    img {
+      max-height: 3.75em;
+      @include media($bp-oak) {
+        max-height: 2.5em;
+      }
+    }
   }
   #menu-trigger {
     float: right;
     clear: right;
     display: none;
+    font-size: 114%;
+    line-height: 2.1875;
+    text-transform: uppercase;
+    color: $app-dark-blue;
+    cursor: pointer;
+    &:hover {
+      color: $app-medium-blue;
+    }
+    &:after {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 0.25em;
+    }
     @include media($bp-oak) {
       display: block;
     }
@@ -296,15 +318,39 @@ header {
     float: right;
     overflow: hidden;
     max-height: 999px;
+    a {
+      float: left;
+      & + a {
+        &:before {
+          display: inline-block;
+          vertical-align: middle;
+          content: "";
+          width: 1px;
+          height: 1.2em;
+          margin: 0 1em;
+          background: $app-medium-blue;
+        }
+      }
+    }
     @include media($bp-oak) {
+      width: 100%;
+      clear: both;
+      background: #fff;
       max-height: 0;
       &.open {
         max-height: 999px;
       }
-    }
-    a {
-      display: inline-block;
-      padding: 0 1em;
+      a {
+        float: none;
+        display: block;
+        line-height: 2;
+        & + a {
+          border-top: solid 1px $light-grey;
+          &:before {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
