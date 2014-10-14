@@ -23,7 +23,7 @@ $max-width: ($total-width-int / $base-font-size-int) * 1rem;
 $bp-acorn: new-breakpoint(max-width 450px $grid-columns);
 // $bp-shoot
 $bp-sapling: new-breakpoint(max-width 750px $grid-columns);
-// $bp-oak
+$bp-oak: new-breakpoint(max-width 850px $grid-columns);
 // $bp-forest
 
 

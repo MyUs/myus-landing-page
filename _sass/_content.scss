@@ -284,10 +284,23 @@ header {
     float: left;
     @include rem(max-height, 60px);
   }
+  #menu-trigger {
+    float: right;
+    clear: right;
+    display: none;
+    @include media($bp-oak) {
+      display: block;
+    }
+  }
   nav {
     float: right;
-    #menu-trigger {
-      display: none;
+    overflow: hidden;
+    max-height: 999px;
+    @include media($bp-oak) {
+      max-height: 0;
+      &.open {
+        max-height: 999px;
+      }
     }
     a {
       display: inline-block;
