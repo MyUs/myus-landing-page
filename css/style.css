@@ -1025,7 +1025,8 @@ footer {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18); }
   @media screen and (max-width: 450px) {
     .how-it-works aside {
-      margin-bottom: 2em; } }
+      margin-bottom: 2em;
+      text-align: center; } }
   .how-it-works aside p:last-child {
     margin-bottom: 0; }
   .how-it-works aside b {
