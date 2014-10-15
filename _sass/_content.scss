@@ -178,15 +178,18 @@ h3 {
       &:hover {
         color: #fff;
       }
+      &:before {
+        vertical-align: bottom;
+      }
       &:not([class]):before {
         font-family: "SSSymbolicons";
         content: "\1F311";
-        vertical-align: middle;
         font-size: 0.75em;
         padding-left: 0.175em;
       }
       &.home:before {
         font-size: 1.11em;
+        vertical-align: text-top;
       }
     }
     &.current {
@@ -197,12 +200,28 @@ h3 {
     }
   }
   span {
-    display: none;
+    // display: none;
+    display: inline-block;
+    // width: 0;
+    // height: 0;
+    // overflow: hidden;
+    // transition-delay: 2s;
     margin-left: 0.5em;
   }
+
+  transform: translate(85%, -50%);
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  vertical-align: middle;
+
   &:hover {
+    transform: translate(0, -50%);
     span {
-      display: inline-block;
+      // display: inline-block;
+      // width: auto;
+      // height: auto;
+      // margin-left: 0.5em;
     }
   }
 }

@@ -824,7 +824,12 @@ h3 {
   background: #4d7ec4;
   padding: 0.5em;
   border: solid 1px #fff;
-  border-right: none; }
+  border-right: none;
+  transform: translate(85%, -50%);
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  vertical-align: middle; }
   @media screen and (max-width: 450px) {
     #sidenav {
       display: none; } }
@@ -833,22 +838,24 @@ h3 {
     color: #203266; }
     #sidenav li a:hover {
       color: #fff; }
+    #sidenav li a:before {
+      vertical-align: bottom; }
     #sidenav li a:not([class]):before {
       font-family: "SSSymbolicons";
       content: "\1F311";
-      vertical-align: middle;
       font-size: 0.75em;
       padding-left: 0.175em; }
     #sidenav li a.home:before {
-      font-size: 1.11em; }
+      font-size: 1.11em;
+      vertical-align: text-top; }
   #sidenav li.current a {
     color: #fff;
     cursor: default; }
   #sidenav span {
-    display: none;
+    display: inline-block;
     margin-left: 0.5em; }
-  #sidenav:hover span {
-    display: inline-block; }
+  #sidenav:hover {
+    transform: translate(0, -50%); }
 
 .intro {
   position: relative;
