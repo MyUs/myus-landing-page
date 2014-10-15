@@ -964,9 +964,15 @@ header #menu-trigger {
   header #menu-trigger:hover {
     color: #4d7ec4; }
   header #menu-trigger:after {
+    content: "";
     display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.25em; }
+    margin-left: 0.25em;
+    width: 1em;
+    height: 0.666em;
+    background: #203266 url(../img/icon_hamburger-with-cheese.png) center no-repeat;
+    background-size: cover; }
+  header #menu-trigger:hover:after {
+    background-color: #4d7ec4; }
   @media screen and (max-width: 850px) {
     header #menu-trigger {
       display: block; } }

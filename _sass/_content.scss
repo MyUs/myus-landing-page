@@ -306,9 +306,20 @@ header {
       color: $app-medium-blue;
     }
     &:after {
+      content: "";
       display: inline-block;
-      vertical-align: middle;
+      // vertical-align: middle;
       margin-left: 0.25em;
+      width: 1em;
+      height: 0.666em;
+      // background: transparent url(../img/icon_hamburger-hold-the-fries.png) center no-repeat;
+      background: $app-dark-blue url(../img/icon_hamburger-with-cheese.png) center no-repeat;
+      background-size: cover;
+    }
+    &:hover {
+      &:after {
+        background-color: $app-medium-blue;
+      }
     }
     @include media($bp-oak) {
       display: block;
