@@ -337,6 +337,7 @@ header {
       clear: both;
       background: #fff;
       max-height: 0;
+      padding-top: 0.75em;
       &.open {
         max-height: 999px;
       }
@@ -757,10 +758,25 @@ footer
   text-align: center;
   li {
     display: inline-block;
+    @include media($bp-acorn) {
+      display: none;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6)
+      {
+        display: inline-block;
+      }
+    }
   }
   img {
-    @include rem(max-height, 44px);
-    @include rem(margin, 0 30px 76px);
+    max-height: 2.44em;
+    margin: 0 1.67em 4.22em;
+    @include media($bp-acorn) {
+      margin-bottom: 2.5em;
+    }
   }
 }
 

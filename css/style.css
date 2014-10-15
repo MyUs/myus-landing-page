@@ -989,7 +989,8 @@ header nav {
       width: 100%;
       clear: both;
       background: #fff;
-      max-height: 0; }
+      max-height: 0;
+      padding-top: 0.75em; }
       header nav.open {
         max-height: 999px; }
       header nav a {
@@ -1403,11 +1404,17 @@ footer {
   text-align: center; }
   .brands li {
     display: inline-block; }
+    @media screen and (max-width: 450px) {
+      .brands li {
+        display: none; }
+        .brands li:nth-child(1), .brands li:nth-child(2), .brands li:nth-child(3), .brands li:nth-child(4), .brands li:nth-child(5), .brands li:nth-child(6) {
+          display: inline-block; } }
   .brands img {
-    max-height: 44px;
-    max-height: 2.2rem;
-    margin: 0 30px 76px;
-    margin: 0 1.5rem 3.8rem; }
+    max-height: 2.44em;
+    margin: 0 1.67em 4.22em; }
+    @media screen and (max-width: 450px) {
+      .brands img {
+        margin-bottom: 2.5em; } }
 
 .final-cta {
   text-align: center;
