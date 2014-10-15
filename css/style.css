@@ -1160,6 +1160,9 @@ footer {
     border-style: solid;
     border-width: 19px;
     border-top-color: #dadada; }
+  .plans .container {
+    padding-bottom: 1em;
+    margin-bottom: -1em; }
   .plans li {
     float: left;
     width: 25%;
@@ -1167,6 +1170,8 @@ footer {
     text-align: center;
     position: relative;
     z-index: 2; }
+    .plans li:hover {
+      z-index: 999; }
     @media screen and (max-width: 450px) {
       .plans li {
         display: block;
@@ -1196,11 +1201,13 @@ footer {
         padding-left: 2em;
         padding-right: 2em;
         width: 90%; }
-      .plans li a:hover .button.dark {
-        background: none #203266; }
-      .plans li a:hover .button.light {
-        color: #fff;
-        background: none #203266; }
+      .plans li a:hover {
+        box-shadow: 0 0 1em #4d7ec4; }
+        .plans li a:hover .button.dark {
+          background: none #203266; }
+        .plans li a:hover .button.light {
+          color: #fff;
+          background: none #203266; }
     .plans li:first-child a {
       border-width: 3px 0 3px 3px; }
       @media screen and (max-width: 450px) {
@@ -1245,8 +1252,7 @@ footer {
       min-width: 75%; }
     .plans li.best {
       width: 50%;
-      padding-top: 0;
-      z-index: 1; }
+      padding-top: 0; }
       @media screen and (max-width: 450px) {
         .plans li.best {
           display: block;

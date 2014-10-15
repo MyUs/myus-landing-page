@@ -490,6 +490,10 @@ footer
 .plans {
   background: $light-grey;
   @include pointy(38px,$light-grey,down);
+  .container {
+    padding-bottom: 1em; // so hover shadow isn't cropped
+    margin-bottom: -1em; // so hover shadow isn't cropped
+  }
   li {
     float: left;
     width: 25%;
@@ -497,6 +501,9 @@ footer
     text-align: center;
     position: relative;
     z-index: 2;
+    &:hover {
+      z-index: 999;
+    }
     @include media($bp-acorn) {
       @include span-columns($total-columns);
       padding-top: 0;
@@ -523,6 +530,7 @@ footer
         width: 90%;
       }
       &:hover {
+        @include box-shadow(0 0 1em $app-medium-blue);
         .button {
           &.dark {
             background: none $app-dark-blue;
@@ -595,7 +603,6 @@ footer
     &.best {
       width: 50%;
       padding-top: 0;
-      z-index: 1;
       @include media($bp-acorn) {
         @include span-columns($total-columns);
       }
