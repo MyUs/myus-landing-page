@@ -149,8 +149,6 @@ h3 {
 }
 
 .narrow {
-  // @include span-columns(6);
-  // @include shift(3);
   @include rem(max-width, 520px);
   margin: auto;
 }
@@ -167,9 +165,11 @@ h3 {
   transform: translate(0, -50%);
   z-index: 999;
   background: $app-medium-blue;
-  padding: 0.5em;
-  border: solid 1px #fff;
+  border: solid 1px $app-light-blue;
   border-right: none;
+  ol {
+    padding: 1em;
+  }
   li {
     // list-style: disc;
     a {
@@ -180,6 +180,7 @@ h3 {
       }
       &:before {
         vertical-align: bottom;
+        margin-right: 1em;
       }
       &:not([class]):before {
         font-family: "SSSymbolicons";
@@ -200,16 +201,10 @@ h3 {
     }
   }
   span {
-    // display: none;
     display: inline-block;
-    // width: 0;
-    // height: 0;
-    // overflow: hidden;
-    // transition-delay: 2s;
-    margin-left: 0.5em;
   }
 
-  transform: translate(85%, -50%);
+  transform: translate(80%, -50%);
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
@@ -217,11 +212,34 @@ h3 {
 
   &:hover {
     transform: translate(0, -50%);
-    span {
-      // display: inline-block;
-      // width: auto;
-      // height: auto;
-      // margin-left: 0.5em;
+  }
+  #sidenav-trigger {
+    display: none;
+    cursor: pointer;
+    margin-left: 0;
+    background: #fff;
+    padding: 0 0.5em 0 1em;
+    color: $app-dark-blue;
+    &:before {
+      font-family: "SSSymbolicons";
+      content: "\25C5";
+      font-size: 0.9em;
+    }
+    &:hover {
+      color: $app-medium-blue;
+    }
+  }
+  @include media($bp-grove) {
+    #sidenav-trigger {
+      display: block;
+    }
+    &.open {
+      transform: translate(0, -50%);
+      #sidenav-trigger {
+        &:before {
+          content: "\25BB";
+        }
+      }
     }
   }
 }
@@ -234,7 +252,6 @@ h3 {
   @include pointy(38px,rgba(211,222,240,1),down);
   color: $app-dark-blue;
   h2 {
-    // @include rem(font-size, 33px);
     font-size: 1.833em;
     @include media($bp-acorn) {
       font-size: 1.43em;
@@ -248,7 +265,6 @@ h3 {
     }
   }
   img {
-    // @include rem(margin-bottom, 32px);
     margin-bottom: 1.778em;
   }
   .button {
@@ -293,6 +309,13 @@ h3 {
 }
 
 header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
   .container {
     padding-top: 1.67em;
     padding-bottom: 1.67em;
@@ -314,7 +337,6 @@ header {
   }
   #menu-trigger {
     float: right;
-    clear: right;
     display: none;
     font-size: 114%;
     line-height: 2.1875;
@@ -327,11 +349,9 @@ header {
     &:after {
       content: "";
       display: inline-block;
-      // vertical-align: middle;
       margin-left: 0.25em;
       width: 1em;
       height: 0.666em;
-      // background: transparent url(../img/icon_hamburger-hold-the-fries.png) center no-repeat;
       background: $app-dark-blue url(../img/icon_hamburger-with-cheese.png) center no-repeat;
       background-size: cover;
     }
@@ -344,6 +364,29 @@ header {
       display: block;
     }
   }
+  a.join {
+    float: right;
+    margin-right: 0.75em;
+    &:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: "";
+      width: 1px;
+      height: 1.2em;
+      margin: 0 1em;
+      background: $app-medium-blue;
+    }
+    @include media($bp-oak) {
+      @include button;
+      font-size: 70%;
+      line-height: 2;
+      margin-top: 0.75em;
+      padding: 0 1em;
+      &:before {
+        display: none;
+      }
+    }
+  }  
   nav {
     float: right;
     overflow: hidden;
@@ -367,8 +410,8 @@ header {
       clear: both;
       background: #fff;
       max-height: 0;
-      padding-top: 0.75em;
       &.open {
+        padding-top: 0.75em;
         max-height: 999px;
       }
       a {
@@ -532,7 +575,7 @@ footer
     position: relative;
     z-index: 2;
     &:hover {
-      z-index: 999;
+      z-index: 998;
     }
     @include media($bp-acorn) {
       @include span-columns($total-columns);

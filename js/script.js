@@ -8,4 +8,10 @@ $(function() {
     $('#main-nav').toggleClass('open');
   });
 
+  $("#sidenav-trigger").on("click", function(event) {
+    event.preventDefault();
+    $('#sidenav').toggleClass('open');
+  });
+
+
 });

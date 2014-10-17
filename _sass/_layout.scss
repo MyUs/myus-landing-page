@@ -9,6 +9,13 @@ body {
 
 .page-wrapper {
   position: relative;
+  padding-top: 6.7em;
+  @include media($bp-sapling) {
+    padding-top: 5em;
+  }
+  @include media($bp-acorn) {
+    padding-top: 3.25em;
+  }
 }
 
 
