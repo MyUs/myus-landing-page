@@ -1030,6 +1030,9 @@ header {
         font-size: 70%;
         margin-top: 0.75em;
         margin-left: 0; } }
+    @media screen and (max-width: 450px) {
+      header a.join {
+        width: auto; } }
   header nav {
     float: right;
     overflow: hidden;

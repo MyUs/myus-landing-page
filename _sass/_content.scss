@@ -376,33 +376,9 @@ header {
       margin-top: 0.75em;
       margin-left: 0;
     }
-
-
-    // &:before {
-    //   display: inline-block;
-    //   vertical-align: middle;
-    //   content: "";
-    //   width: 1px;
-    //   height: 1.2em;
-    //   margin: 0 1em;
-    //   background: $app-medium-blue;
-    // }
-    // @include button;
-    // box-shadow: none;
-    // border-top: solid transparent;
-    // border-width: 0 0 1px;
-    // font-weight: 700;
-    // text-shadow: none;
-    // background: none $app-medium-blue;
-    // border-bottom: solid $app-dark-blue;
-    // &:before {
-    //   display: none;
-    // }
-    // &:hover:not(:disabled) {
-    //   color: #fff;
-    //   background: none $app-dark-blue;
-    //   box-shadow: none;
-    // }
+    @include media($bp-acorn) {
+      width: auto;
+    }
   }  
   nav {
     float: right;
