@@ -155,14 +155,16 @@ h3 {
 
 
 
+
 #sidenav {
   @include media($bp-acorn) {
     display: none;
   }
   position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
+  z-index: 999;
+  left: 100%;
+  top: 25%;
+  margin-left: -3em;
   z-index: 999;
   background: $app-medium-blue;
   border: solid 1px $app-light-blue;
@@ -171,7 +173,6 @@ h3 {
     padding: 1em;
   }
   li {
-    // list-style: disc;
     a {
       display: block;
       color: $app-dark-blue;
@@ -199,19 +200,22 @@ h3 {
         cursor: default;
       }
     }
+    span {
+      display: none;
+    }
   }
-  span {
-    display: inline-block;
-  }
-
-  transform: translate(80%, -50%);
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  vertical-align: middle;
-
-  &:hover {
-    transform: translate(0, -50%);
+  &.open
+  // ,
+  // .no-touch &:hover
+  {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    li {
+      span {
+        display: inline-block;
+      }
+    }
   }
   #sidenav-trigger {
     display: none;
@@ -244,6 +248,37 @@ h3 {
   }
 }
 
+.no-touch {
+
+  #sidenav {
+
+    //undo defaults for non-csstransforms compatible browsers
+    left: auto;
+    right: 0;
+    top: 50%;
+    transform: translate(80%, -50%);
+    transition: all 0.2s linear;
+    vertical-align: middle;
+    margin-left: 0;
+    li {
+      span {
+        display: inline-block;
+      }
+    }
+    &.open,
+    &:hover
+    {
+      right: 0;
+      transform: translate(0, -50%);
+    }
+
+  }
+} // .no-touch
+
+main {
+  position: relative;
+  z-index: 997;
+}
 
 .intro {
   position: relative;
@@ -319,7 +354,7 @@ header {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 999;
+  z-index: 998;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
   .container {

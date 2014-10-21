@@ -824,18 +824,14 @@ h3 {
 
 #sidenav {
   position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
+  z-index: 999;
+  left: 100%;
+  top: 25%;
+  margin-left: -3em;
   z-index: 999;
   background: #4d7ec4;
   border: solid 1px #a2c5ee;
-  border-right: none;
-  transform: translate(80%, -50%);
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  vertical-align: middle; }
+  border-right: none; }
   @media screen and (max-width: 450px) {
     #sidenav {
       display: none; } }
@@ -860,10 +856,16 @@ h3 {
   #sidenav li.current a {
     color: #fff;
     cursor: default; }
-  #sidenav span {
-    display: inline-block; }
-  #sidenav:hover {
-    transform: translate(0, -50%); }
+  #sidenav li span {
+    display: none; }
+  #sidenav.open
+   {
+    left: auto;
+    right: 0;
+    margin-left: 0; }
+    #sidenav.open
+    li span {
+      display: inline-block; }
   #sidenav #sidenav-trigger {
     display: none;
     cursor: pointer;
@@ -884,6 +886,24 @@ h3 {
       transform: translate(0, -50%); }
       #sidenav.open #sidenav-trigger:before {
         content: "\25BB"; } }
+
+.no-touch #sidenav {
+  left: auto;
+  right: 0;
+  top: 50%;
+  transform: translate(80%, -50%);
+  transition: all 0.2s linear;
+  vertical-align: middle;
+  margin-left: 0; }
+  .no-touch #sidenav li span {
+    display: inline-block; }
+  .no-touch #sidenav.open, .no-touch #sidenav:hover {
+    right: 0;
+    transform: translate(0, -50%); }
+
+main {
+  position: relative;
+  z-index: 997; }
 
 .intro {
   position: relative;
@@ -992,7 +1012,7 @@ header {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 999;
+  z-index: 998;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1); }
   header .container {

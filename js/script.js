@@ -13,5 +13,22 @@ $(function() {
     $('#sidenav').toggleClass('open');
   });
 
+  // if($('html').hasClass('no-touch')) {
+  //   alert('YES');
+  // }
+  // else {
+  //   alert('NO');
+  // }
+
+  // if($('html').hasClass('csstransforms')) {
+  //   alert('transforms supported');
+  // }
+  // else {
+  //   alert('transforms NOT supported');
+  // }
+
+
+  // alert($('html').attr('class'));
+
 
 });
