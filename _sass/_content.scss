@@ -604,161 +604,127 @@ footer
   background: $light-grey;
   @include pointy(38px,$light-grey,down);
   .container {
-    padding-bottom: 1em; // so hover shadow isn't cropped
-    margin-bottom: -1em; // so hover shadow isn't cropped
+    overflow: visible;
+  }
+  ul {
+    @include span-columns(10,12);
+    @include shift(1);
+    @include media($bp-sapling) {
+      @include span-columns($total-columns);
+      @include shift(0);
+    }
   }
   li {
     float: left;
-    width: 25%;
-    padding-top: 3.25rem;
+    width: 27.1717%;
     text-align: center;
+    // font-size: 1.12em;
+    margin-top: 3em;
     position: relative;
-    z-index: 2;
-    &:hover {
-      z-index: 998;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      z-index: 1;
+      border: solid 9.5em transparent;
+      border-top: solid 3em rgba(184,184,184,1);
+      border-bottom: none;
+      transform: translate(-50%, 0);
     }
-    @include media($bp-acorn) {
-      @include span-columns($total-columns);
-      padding-top: 0;
-      margin-bottom: 1.43em;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    &.standard {
+      margin-left: -68.7879%;
     }
+    &.premium {
+      width: 37.5758%;
+      margin-top: 0;
+      margin-left: 31.2121%;
+      font-size: 1.5em;
+    }
+    &.premail {
+      float: right;
+    }
+
+    @include media($bp-sapling) {
+      &[class] {
+        @include span-columns($total-columns);
+        margin: 0 0 1.43em;
+      }
+    }
+
     a {
       display: block;
       position: relative;
-      background: #fff;
-      border: solid $app-light-blue;
-      border-width: 3px 3px 3px 0;
-      padding-top: 2.2em;
-      padding-bottom: 1em;
-      color: $base-font-color;
-      @include media($bp-acorn) {
-        border: solid 1px #fff;
-        padding-top: 3em;
-      }
-      .button {
-        font-style: normal;
-        padding-left: 2em;
-        padding-right: 2em;
-        width: 90%;
-      }
+      z-index: 2;
+      background: transparent url(../img/box.png) center top /100% 100% no-repeat;
+      padding: 4.125em 0 2em;
+      color: #fff;
       &:hover {
-        @include box-shadow(0 0 1em $app-medium-blue);
+        // @include box-shadow(0 0 1em $app-medium-blue);
         .button {
           &.dark {
             background: none $app-dark-blue;
           }
           &.light {
             color: #fff;
-            background: none $app-dark-blue;
+            background: none $app-medium-blue;
+            border-bottom-color: $app-dark-blue;
           }
         }
-        // .membership-type {
-        //   background: $app-dark-blue;
-        //   @include media($bp-acorn) {
-        //     background: $app-light-blue;
-        //   }
-        // }
       }
     }
-    &:first-child {
-      a {
-        border-width: 3px 0 3px 3px;
-        @include media($bp-acorn) {
-          border-width: 1px;
-        }
-      }
-      strong {
-        background-color: transparent;
-      }
+    span {
+      display: block;
+      padding: 0 1em;
     }
     .membership-type {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 1.5em;
+      // outline: solid 1px #fff;
       background: $app-light-blue;
       color: #fff;
       text-transform: uppercase;
-      font-size: 72%;
+      font-size: 0.875em;
       line-height: 2;
-      font-weight: 600;
-      @include media($bp-acorn) {
-        font-size: 100%;
-        line-height: 2.15;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        background: transparent;
+        border: solid 1px #fff;
+        margin: -0.2em;
       }
     }
     h3 {
-      font-size: 100%;
+      font-size: 1em;
+      line-height: 1.33;
       color: inherit;
     }
-    p {
-      margin-bottom: 0.6em;
+    .cost {
+      font-size: 1em;
+      line-height: 1.33;
+      margin-bottom: 1em;
     }
-    strong {
-      display: block;
-      margin-top: 0.2em;
-      background-color: rgba(151,151,151,1);
+    .details {
+      font-size: 0.78em;
+      line-height: 2;
+      background: rgba(151,151,151,1);
       color: #fff;
-      font-weight: normal;
-      @include media($bp-acorn) {
-        line-height: 2.5;
-        &.empty {
-          display: none;
-        }
-      }
     }
     .button {
-      font-size: 100%;
-      line-height: 128%;
+      display: inline-block;
+      width: 90%;
       min-width: 75%;
+      margin: auto;
+      font-size: 1em;
+      line-height: 2.222;
+      font-style: normal;
+      color: $golden-brown;
+      border-bottom-color: $golden-brown;
     }
-    &.best {
-      width: 50%;
-      padding-top: 0;
-      @include media($bp-acorn) {
-        @include span-columns($total-columns);
-      }
-      a {
-        padding-top: 4.4em;
-        background: $app-medium-blue;
-        border: solid 1px #fff;
-        color: #fff;
-        @include media($bp-acorn) {
-          padding-top: 4em;
-        }
-      }
-      .membership-type {
-        font-size: 111%;
-        line-height: 1.95;
-        @include media($bp-acorn) {
-          font-size: 75%;
-        }
-      }
-      h3 {
-        font-size: 133%;
-        @include media($bp-acorn) {
-          font-size: 143%;
-        }
-      }
-      p {
-        margin-bottom: 1em;
-        @include media($bp-acorn) {
-          font-size: 143%;
-        }
-      }
-      strong {    
-        margin-top: 1.3em;
-        background-color: rgba(79,170,109,1);
-        @include media($bp-acorn) {
-          font-size: 70%;
-        }
-      }
-      .button {
-        font-size: 133%;
-        line-height: 1.58;
-      }
-    }
+
   }
 }
 
