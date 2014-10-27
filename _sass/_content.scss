@@ -609,7 +609,7 @@ footer
   ul {
     @include span-columns(10,12);
     @include shift(1);
-    @include media($bp-sapling) {
+    @include media($bp-grove) {
       @include span-columns($total-columns);
       @include shift(0);
     }
@@ -663,7 +663,8 @@ footer
         @include span-columns(6,12);
       }
       &.premium {
-        @include span-columns($total-columns);
+        @include span-columns(10,12);
+        @include shift(1);
       }
     }
 

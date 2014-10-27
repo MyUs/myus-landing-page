@@ -1269,7 +1269,7 @@ footer {
     margin-left: 8.61204%; }
     .plans ul:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 960px) {
       .plans ul {
         display: block;
         float: left;
@@ -1325,7 +1325,8 @@ footer {
         display: block;
         float: left;
         margin-right: 3.34448%;
-        width: 100%; }
+        width: 82.77592%;
+        margin-left: 8.61204%; }
         .plans li.premium:last-child {
           margin-right: 0; } }
     @media screen and (max-width: 450px) {
