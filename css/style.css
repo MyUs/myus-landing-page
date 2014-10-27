@@ -1314,6 +1314,22 @@ footer {
       float: right; }
     @media screen and (max-width: 750px) {
       .plans li[class] {
+        margin: 0 0 1.43em;
+        display: block;
+        float: left;
+        margin-right: 3.34448%;
+        width: 48.32776%; }
+        .plans li[class]:last-child {
+          margin-right: 0; }
+      .plans li.premium {
+        display: block;
+        float: left;
+        margin-right: 3.34448%;
+        width: 100%; }
+        .plans li.premium:last-child {
+          margin-right: 0; } }
+    @media screen and (max-width: 450px) {
+      .plans li[class] {
         display: block;
         float: left;
         margin-right: 3.34448%;

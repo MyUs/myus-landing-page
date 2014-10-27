@@ -659,6 +659,16 @@ footer
 
     @include media($bp-sapling) {
       &[class] {
+        margin: 0 0 1.43em;
+        @include span-columns(6,12);
+      }
+      &.premium {
+        @include span-columns($total-columns);
+      }
+    }
+
+    @include media($bp-acorn) {
+      &[class] {
         @include span-columns($total-columns);
         margin: 0 0 1.43em;
       }
