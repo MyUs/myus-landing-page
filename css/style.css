@@ -1296,11 +1296,20 @@ footer {
       transform: translate(-50%, 0); }
     .plans li.standard {
       margin-left: -68.7879%; }
+      .plans li.standard .details {
+        background: transparent;
+        box-shadow: none; }
+        @media screen and (max-width: 450px) {
+          .plans li.standard .details {
+            display: none; } }
     .plans li.premium {
       width: 37.5758%;
       margin-top: 0;
       margin-left: 31.2121%;
       font-size: 1.5em; }
+      .plans li.premium .details {
+        font-size: 0.666em;
+        background: #4faa6d; }
     .plans li.premail {
       float: right; }
     @media screen and (max-width: 750px) {
@@ -1316,6 +1325,7 @@ footer {
       display: block;
       position: relative;
       z-index: 2;
+      overflow: hidden;
       background: transparent url(../img/box.png) center top/100% 100% no-repeat;
       padding: 4.125em 0 2em;
       color: #fff; }
@@ -1325,6 +1335,7 @@ footer {
         color: #fff;
         background: none #4d7ec4;
         border-bottom-color: #203266; }
+    .plans li h3,
     .plans li span {
       display: block;
       padding: 0 1em; }
@@ -1337,6 +1348,9 @@ footer {
       text-transform: uppercase;
       font-size: 0.875em;
       line-height: 2; }
+      @media screen and (max-width: 450px) {
+        .plans li .membership-type {
+          font-size: 1em; } }
       .plans li .membership-type:after {
         content: "";
         position: absolute;
@@ -1356,13 +1370,19 @@ footer {
       line-height: 1.33;
       margin-bottom: 1em; }
     .plans li .details {
-      font-size: 0.78em;
-      line-height: 2;
+      margin-bottom: 1.25em;
+      padding: 0.25em 0.5em;
+      box-shadow: 0 0.1em 0.2em #815531;
       background: #979797;
+      font-size: 0.78em;
+      line-height: 1.4;
       color: #fff; }
+      @media screen and (max-width: 450px) {
+        .plans li .details {
+          font-size: 1em; } }
     .plans li .button {
       display: inline-block;
-      width: 90%;
+      width: 80%;
       min-width: 75%;
       margin: auto;
       font-size: 1em;
