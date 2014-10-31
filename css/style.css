@@ -883,6 +883,10 @@ h3 {
     #sidenav #sidenav-trigger {
       display: block; }
     #sidenav.open {
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
       transform: translate(0, -50%); }
       #sidenav.open #sidenav-trigger:before {
         content: "\25BB"; } }
@@ -891,6 +895,10 @@ h3 {
   left: auto;
   right: 0;
   top: 50%;
+  -webkit-transform: translate(80%, -50%);
+  -moz-transform: translate(80%, -50%);
+  -ms-transform: translate(80%, -50%);
+  -o-transform: translate(80%, -50%);
   transform: translate(80%, -50%);
   transition: all 0.2s linear;
   vertical-align: middle;
@@ -899,6 +907,10 @@ h3 {
     display: inline-block; }
   .no-touch #sidenav.open, .no-touch #sidenav:hover {
     right: 0;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
     transform: translate(0, -50%); }
 
 main {
